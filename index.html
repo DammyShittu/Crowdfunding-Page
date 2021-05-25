@@ -7,7 +7,7 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Crowdfunding product page</title>
 
 </head>
@@ -44,9 +44,10 @@
         <div>
           <button class="btn">Back this project</button>
         </div>
-        <div>
-          <img src="./images/icon-bookmark.svg" alt="Bookmark Icon">
+        <div class="button-1">
           <button class="btn-1"> Bookmark</button>
+          <img src="./images/icon-bookmark.svg" alt="Bookmark Icon">
+
         </div>
 
       </div>
@@ -72,7 +73,7 @@
 
       </div>
 
-      <input type="range" min="0" max="100000">
+      <input type="range" min="0" max="100000" value="89,914">
     </section>
 
     <section id="about-section">
@@ -87,62 +88,62 @@
           to allow notepads, pens, and USB sticks to be stored under the stand.
         </p>
       </article>
+      <div class="bamboo-section">
+        <div class="bamboo">
 
-      <div class="bamboo">
+          <div class="bamboo-pledge">
+            <h4>Bamboo Stand</h4>
+            <span>Pledge $25 or more</span>
+          </div>
 
-        <div class="bamboo-pledge">
-          <h4>Bamboo Stand</h4>
-          <span>Pledge $25 or more</span>
+          <div>
+            <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+              you’ll be added to a special Backer member list.</p>
+          </div>
+
+          <div class="bamboo-pledge">
+            <h4 class="num-left">101 <span class="left">left</span></h4>
+            <button class="btn">Select Reward</button>
+          </div>
         </div>
 
-        <div>
-          <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-            you’ll be added to a special Backer member list.</p>
+
+        <div class="bamboo">
+          <div class="bamboo-pledge">
+            <h4>Black Edition Stand</h4>
+            <span>Pledge $75 or more</span>
+          </div>
+
+          <div>
+            <p>
+              You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+              member list. Shipping is included.</p>
+          </div>
+
+          <div class="bamboo-pledge">
+            <h4 class="num-left">64 <span class="left">left</span></h4>
+            <button class="btn">Select Reward</button>
+          </div>
         </div>
 
-        <div class="bamboo-pledge">
-          <h4>101 <span class="left">left</span></h4>
-          <button class="btn">Select Reward</button>
-        </div>
-      </div>
 
+        <div class="mahogany">
 
-      <div class="bamboo">
+          <div class="bamboo-pledge">
+            <h4>Mahogany Special Edition</h4>
+            <span>Pledge $200 or more</span>
+          </div>
 
-        <div class="bamboo-pledge">
-          <h4>Black Edition Stand</h4>
-          <span>Pledge $75 or more</span>
-        </div>
+          <div>
+            <p>
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+              to our Backer member list. Shipping is included.</p>
+          </div>
 
-        <div>
-          <p>
-            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-            member list. Shipping is included.</p>
-        </div>
-
-        <div class="bamboo-pledge">
-          <h4>64 <span class="left">left</span></h4>
-          <button class="btn">Select Reward</button>
-        </div>
-      </div>
-
-
-      <div class="bamboo mahogany">
-
-        <div class="bamboo-pledge">
-          <h4>Mahogany Special Edition</h4>
-          <span>Pledge $200 or more</span>
-        </div>
-
-        <div>
-          <p>
-            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
-            to our Backer member list. Shipping is included.</p>
-        </div>
-
-        <div class="bamboo-pledge">
-          <h4>0 <span class="left">left</span></h4>
-          <button class="btn">Out of Stock</button>
+          <div class="bamboo-pledge">
+            <h4 class="num-left">0 <span class="left">left</span></h4>
+            <button class="btn">Out of Stock</button>
+          </div>
         </div>
       </div>
     </section>
@@ -168,7 +169,7 @@
 
     </div>
 
-    <div class="bamboo">
+    <div class="bamboo reward">
       <div class="bamboo-stand">
         <div>
           <input type="radio" id="pledge" name="pledge">
@@ -183,25 +184,25 @@
           You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
           you’ll be added to a special Backer member list.</p>
       </div>
+      <!-- Selected pledge start -->
 
-    </div>
+      <div class="selected-pledge">
+        <p>Enter your pledge</p>
 
-    <!-- Selected pledge start -->
-
-    <div class="selected-pledge">
-      <p>Enter your pledge</p>
-
-      <div>
-        <input type="number" id="text" min="25" max="74">
-        <span class="dollar">$</span>
-        <button class="btn">Continue</button>
+        <div class="input">
+          <input type="number" id="text" min="25" max="74">
+          <span class="dollar">$</span>
+          <button class="btn">Continue</button>
+        </div>
       </div>
+
+      <!-- Selected pledge end -->
     </div>
 
-    <!-- Selected pledge end -->
 
 
-    <div class="bamboo">
+
+    <div class="bamboo reward">
       <div class="bamboo-stand">
         <div>
           <input type="radio" id="pledge" name="pledge">
@@ -217,18 +218,19 @@
           member list. Shipping is included.</p>
       </div>
 
-    </div>
+      <!-- Selected pledge start -->
+      <div class="selected-pledge">
 
-    <!-- Selected pledge start -->
+        <p>Enter your pledge</p>
 
-    <div class="selected-pledge">
-      <p>Enter your pledge</p>
-
-      <div>
-        <input type="number" id="text" min="75" max="199">
-        <span class="dollar">$</span>
-        <button class="btn">Continue</button>
+        <div class="input">
+          <input type="number" id="text" min="75" max="199">
+          <span class="dollar">$</span>
+          <button class="btn">Continue</button>
+        </div>
       </div>
+
+      <!-- Selected pledge end -->
     </div>
 
 
@@ -239,7 +241,7 @@
           <label for="pledge">Mahogany Special Edition</label> &nbsp;&nbsp;
           <span>Pledge $200 or more</span>
         </div>
-        <h4>0<span class="left">left</span></h4>
+        <h4>0 <span class="left">left</span></h4>
       </div>
 
       <div>
