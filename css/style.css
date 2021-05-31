@@ -8,7 +8,7 @@
   --page-font: "Commissioner", sans-serif;
 }
 
-#mastercraft, #numbers-section, #about-section, #modal-default {
+#mastercraft, #numbers-section, #about-section, #modal-default, #modal-success {
   width: 50%;
   height: max-content;
   margin: 0 auto;
@@ -79,14 +79,19 @@ h3 {
 }
 
 .bamboo,
+.bamboo-1,
 .mahogany {
   border: 1px solid #dfdddd;
   border-radius: 8px;
   padding: 20px;
+  box-shadow: 9px 9px 8px 0px rgba(217, 209, 209, 0.67);
+  -webkit-box-shadow: 9px 9px 8px 0px rgba(217, 209, 209, 0.67);
+  -moz-box-shadow: 9px 9px 8px 0px rgba(217, 209, 209, 0.67);
 }
 
-.bamboo {
-  margin-bottom: 20px;
+.bamboo,
+.bamboo-1 {
+  margin-bottom: 25px;
 }
 
 header {
@@ -152,10 +157,6 @@ header li a:hover {
   line-height: 2;
 }
 
-#mastercraft .intro p {
-  opacity: 0.9;
-}
-
 #mastercraft .mastercraft-btn {
   display: flex;
   justify-content: space-between;
@@ -165,6 +166,7 @@ header li a:hover {
 
 #mastercraft .mastercraft-btn .button-1 {
   position: relative;
+  max-width: 120px;
 }
 
 #mastercraft .mastercraft-btn .btn-1 {
@@ -177,6 +179,7 @@ header li a:hover {
   position: absolute;
   left: 0;
   right: 0;
+  top: 0;
   z-index: 999;
   width: 35%;
   cursor: pointer;
@@ -205,8 +208,19 @@ header li a:hover {
   border-right: 1px #949494 solid;
 }
 
-#numbers-section p {
-  opacity: 0.9;
+#numbers-section .range-slider {
+  position: relative;
+}
+
+#numbers-section .range-slider .bar {
+  position: absolute;
+  z-index: 999;
+  left: 1px;
+  top: 12px;
+  width: 89%;
+  height: 9px;
+  border-radius: 50px;
+  background-color: var(--primary-color);
 }
 
 #numbers-section input[type="range"] {
@@ -215,11 +229,12 @@ header li a:hover {
   outline: none;
   border-radius: 50px;
   background: #dddbdb;
+  position: relative;
+  z-index: 3;
 }
 
 #numbers-section input[type="range"]::-webkit-slider-runnable-track {
   height: 10px;
-  background: var(--primary-color);
   border: none;
   border-radius: 50px;
 }
@@ -239,9 +254,12 @@ header li a:hover {
   -webkit-appearance: none;
 }
 
+#about-section {
+  margin-bottom: 30px;
+}
+
 #about-section article p {
   margin-top: 30px;
-  font-size: 15px;
   text-align: justify;
 }
 
@@ -255,7 +273,6 @@ header li a:hover {
 }
 
 #about-section p {
-  font-size: 15px;
   margin: 20px 0;
   text-align: justify;
 }
@@ -304,7 +321,7 @@ header li a:hover {
   margin-bottom: 30px;
 }
 
-#modal-default input[type="radio"] {
+#modal-default #pledge {
   appearance: none;
   display: inline-block;
   width: 20px;
@@ -319,8 +336,12 @@ header li a:hover {
   cursor: pointer;
 }
 
-#modal-default input[type="radio"]:checked {
+#modal-default #pledge:checked {
   background-color: var(--primary-color);
+}
+
+#modal-default #pledge:checked ~ .selected-pledge {
+  display: flex;
 }
 
 #modal-default label {
@@ -378,11 +399,13 @@ header li a:hover {
   border-radius: 25px;
   min-width: 40px;
   max-width: 80px;
-  padding: 10px 20px;
+  padding: 10px;
   outline: none;
   caret-color: var(--primary-color);
   border: 2px solid var(--primary-color);
-  margin: 0 10px;
+  margin: 0 5px;
+  font-size: 15px;
+  text-align: center;
 }
 
 #modal-default .dollar {
@@ -393,5 +416,29 @@ header li a:hover {
   bottom: 0;
   z-index: 999;
   color: var(--tertiary-color);
+}
+
+#modal-success {
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  visibility: hidden;
+}
+
+#modal-success .modal-img {
+  margin-bottom: 25px;
+}
+
+#modal-success h3 {
+  line-height: 2.5;
+}
+
+#modal-success .got-it {
+  margin-top: 20px;
+  width: 120px;
 }
 /*# sourceMappingURL=style.css.map */

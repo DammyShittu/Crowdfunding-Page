@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div id="overlay">
   <header>
     <div id="crowd-head">
       <div>
@@ -32,7 +33,7 @@
   <main>
     <section id="mastercraft">
       <div class="mastercraft-img">
-        <img src="./images/logo-mastercraft.svg" alt="Mastercraft Logo">
+        <img src="./images/logo-mastercraft.svg" alt="Mastercraft Logo" >
       </div>
 
       <div class="intro">
@@ -42,11 +43,11 @@
 
       <div class="mastercraft-btn">
         <div>
-          <button class="btn">Back this project</button>
+          <button class="btn" onclick="backThisProject()">Back this project</button>
         </div>
-        <div class="button-1">
-          <button class="btn-1"> Bookmark</button>
-          <img src="./images/icon-bookmark.svg" alt="Bookmark Icon">
+        <div class="button-1" onclick="getBookmark()">
+          <button class="btn-1" id="bookmark"> Bookmark</button>
+          <img src="./images/icon-bookmark.svg" id="icon" alt="Bookmark Icon">
 
         </div>
 
@@ -72,8 +73,13 @@
         </div>
 
       </div>
-
-      <input type="range" min="0" max="100000" value="89,914">
+    <div class="range-slider">
+      <span class="bar"></span>
+        <input type="range" min="0" max="100" value="80">
+      
+            </div>
+      
+      <!-- <div class="progress"></div> -->
     </section>
 
     <section id="about-section">
@@ -103,7 +109,7 @@
 
           <div class="bamboo-pledge">
             <h4 class="num-left">101 <span class="left">left</span></h4>
-            <button class="btn">Select Reward</button>
+            <button class="btn" onclick="backThisProject()">Select Reward</button>
           </div>
         </div>
 
@@ -122,7 +128,7 @@
 
           <div class="bamboo-pledge">
             <h4 class="num-left">64 <span class="left">left</span></h4>
-            <button class="btn">Select Reward</button>
+            <button class="btn" onclick="backThisProject()">Select Reward</button>
           </div>
         </div>
 
@@ -148,17 +154,18 @@
       </div>
     </section>
   </main>
+</div>
 
 
   <!-- Selection modal start -->
 
   <section id="modal-default">
-    <img src="./images/icon-close-modal.svg" alt="Modal Close Icon">
+    <img src="./images/icon-close-modal.svg" alt="Modal Close Icon" onclick="closeModal()">
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-    <div class="bamboo">
-      <input type="radio" id="pledge" name="pledge">
+    <div class="bamboo-1 bamboo-pledge" >
+      <input type="radio" id="pledge" name="pledge" onclick="clickBorder()">
       <label for="pledge"> Pledge with no reward</label> <br>
 
       <div>
@@ -167,6 +174,15 @@
           you will be signed up to receive product updates via email.</p>
       </div>
 
+      <div class="selected-pledge">
+        <p>Enter your pledge</p>
+
+        <div class="input">
+          <input type="number" id="text" min="0" max="200">
+          <span class="dollar">$</span>
+          <button class="btn">Continue</button>
+        </div>
+      </div>
     </div>
 
     <div class="bamboo reward">
@@ -272,11 +288,9 @@
     <button class="btn got-it">Got it!</button>
   </section>
 
-
-
-
-
   <!-- Success modal end -->
+
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
