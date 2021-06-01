@@ -94,6 +94,20 @@ h3 {
   margin-bottom: 25px;
 }
 
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  cursor: pointer;
+}
+
 header {
   height: 400px;
   background-image: url(../images/image-hero-desktop.jpg);
@@ -130,6 +144,10 @@ header li a:hover {
   transform: scale(0.7);
 }
 
+header #mobile-menu {
+  display: none;
+}
+
 #mastercraft {
   position: absolute;
   top: 320px;
@@ -154,7 +172,7 @@ header li a:hover {
 #mastercraft .intro h1 {
   font-size: 25px;
   color: var(--black);
-  line-height: 2;
+  line-height: 1.6;
 }
 
 #mastercraft .mastercraft-btn {
@@ -177,11 +195,11 @@ header li a:hover {
 
 #mastercraft .mastercraft-btn img {
   position: absolute;
-  left: 0;
+  left: 1px;
   right: 0;
   top: 0;
   z-index: 999;
-  width: 35%;
+  width: 37%;
   cursor: pointer;
 }
 
@@ -192,20 +210,21 @@ header li a:hover {
 
 #numbers-section {
   margin-top: 13%;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 
 #numbers-section .numbers {
   width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 #numbers-section .backed,
 #numbers-section .backers {
   padding-right: 40px;
-  border-right: 1px #949494 solid;
+  border-right: 1px rgba(148, 148, 148, 0.2) solid;
 }
 
 #numbers-section .range-slider {
@@ -294,16 +313,18 @@ header li a:hover {
 
 #about-section .mahogany {
   margin-bottom: 0;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   opacity: 0.5;
 }
 
 #modal-default {
   position: absolute;
   left: 50%;
-  top: 100%;
+  top: 110%;
   transform: translate(-50%, -50%);
+  transition: 0.3s;
   z-index: 999;
+  overflow: visible;
   visibility: hidden;
 }
 
@@ -321,13 +342,12 @@ header li a:hover {
   margin-bottom: 30px;
 }
 
-#modal-default #pledge {
+#modal-default input[type="radio"] {
   appearance: none;
-  display: inline-block;
   width: 20px;
   height: 20px;
   position: relative;
-  top: 2px;
+  top: 5px;
   padding: 2px;
   background-clip: content-box;
   border: 2px solid #bbbbbb;
@@ -336,12 +356,8 @@ header li a:hover {
   cursor: pointer;
 }
 
-#modal-default #pledge:checked {
+#modal-default input[type="radio"]:checked {
   background-color: var(--primary-color);
-}
-
-#modal-default #pledge:checked ~ .selected-pledge {
-  display: flex;
 }
 
 #modal-default label {
@@ -378,27 +394,62 @@ header li a:hover {
 
 #modal-default .mahogany {
   margin-bottom: 0;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   opacity: 0.5;
 }
 
-#modal-default .selected-pledge {
-  display: none;
+#modal-default .selected-pledge,
+#modal-default .selected-pledge-1,
+#modal-default .selected-pledge-2 {
+  opacity: 0;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #dfdddd;
   padding-top: 15px;
   position: relative;
+  overflow: hidden;
+  max-height: 0;
+  transform: scale(0.8);
+  transition: 0.5s;
 }
 
-#modal-default .selected-pledge p {
+#modal-default .selected-pledge p,
+#modal-default .selected-pledge-1 p,
+#modal-default .selected-pledge-2 p {
   padding-top: 10px;
+}
+
+#modal-default #pledge:checked ~ .selected-pledge {
+  display: flex;
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+  padding-bottom: 10px;
+  transform: scale(1);
+}
+
+#modal-default #pledge-1:checked ~ .selected-pledge-1 {
+  display: flex;
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+  padding-bottom: 10px;
+  transform: scale(1);
+}
+
+#modal-default #pledge-2:checked ~ .selected-pledge-2 {
+  display: flex;
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+  padding-bottom: 10px;
+  transform: scale(1);
 }
 
 #modal-default input[type="number"] {
   border-radius: 25px;
   min-width: 40px;
-  max-width: 80px;
+  max-width: 90px;
   padding: 10px;
   outline: none;
   caret-color: var(--primary-color);
@@ -410,18 +461,20 @@ header li a:hover {
 
 #modal-default .dollar {
   position: absolute;
-  left: 72%;
-  right: 72%;
-  top: 43px;
+  left: 70%;
+  right: 70%;
+  top: 35px;
   bottom: 0;
   z-index: 999;
   color: var(--tertiary-color);
+  font-size: 17px;
 }
 
 #modal-success {
-  width: 40%;
+  width: 38%;
+  padding: 40px;
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
@@ -430,7 +483,7 @@ header li a:hover {
 }
 
 #modal-success .modal-img {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 #modal-success h3 {
@@ -440,5 +493,185 @@ header li a:hover {
 #modal-success .got-it {
   margin-top: 20px;
   width: 120px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #mastercraft,
+  #numbers-section,
+  #about-section,
+  #modal-default {
+    width: 70%;
+  }
+  #modal-success {
+    width: 60%;
+  }
+  #numbers-section {
+    margin-top: 19%;
+  }
+  #numbers-section .numbers {
+    width: 100%;
+    gap: 20px;
+  }
+  #modal-default {
+    top: 55%;
+  }
+  #modal-default .dollar {
+    left: 54%;
+    right: 54%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 14px;
+  }
+  #mastercraft .mastercraft-img {
+    top: -11%;
+  }
+  #numbers-section {
+    margin-top: 25%;
+  }
+  #modal-default {
+    top: 80%;
+  }
+  #modal-default .dollar {
+    left: 57%;
+    right: 57%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #mastercraft,
+  #numbers-section,
+  #about-section,
+  #modal-default {
+    width: 90%;
+  }
+  #modal-success {
+    width: 80%;
+  }
+  header {
+    height: 300px;
+    background-image: url(../images/image-hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  header #crowd-head {
+    height: 70px;
+    width: 90%;
+  }
+  header nav {
+    display: none;
+  }
+  header #mobile-menu {
+    display: block;
+  }
+  header #mobile-menu .hamburger {
+    position: absolute;
+    top: 18px;
+    right: 38px;
+    cursor: pointer;
+    display: block;
+  }
+  header #mobile-menu .hamburger #menu-close {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    display: none;
+  }
+  header #mobile-menu .menu {
+    display: none;
+    width: 85%;
+    height: max-content;
+    background-color: var(--white);
+    border-radius: 10px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 999;
+  }
+  header #mobile-menu .menu a {
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  header #mobile-menu .menu a:hover {
+    transform: scale(0.98, 1.1);
+  }
+  header #mobile-menu .menu .link1 {
+    border-bottom: 1px rgba(148, 148, 148, 0.2) solid;
+  }
+  #mastercraft {
+    top: 230px;
+  }
+  #numbers-section {
+    margin-top: 65%;
+  }
+  #numbers-section .numbers {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #numbers-section .backed,
+  #numbers-section .backers {
+    padding-right: 0;
+    padding-bottom: 10px;
+    border-right: none;
+    border-bottom: 1px rgba(148, 148, 148, 0.2) solid;
+  }
+  #about-section .bamboo-pledge,
+  #modal-default .bamboo-stand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #modal-default {
+    top: 160%;
+  }
+  #modal-default h4 {
+    position: relative;
+    top: 140px;
+    font-size: 26px;
+  }
+  #modal-default .font-1 {
+    top: 170px;
+  }
+  #modal-default p {
+    margin-top: 5px;
+  }
+  #modal-default label {
+    padding-right: 50px;
+    width: 100%;
+    font-size: 14px;
+  }
+  #modal-default #label-1 {
+    padding-right: 100px;
+  }
+  #modal-default #more {
+    margin-left: 40px;
+  }
+  #modal-default #more-1 {
+    margin-left: 17px;
+  }
+  #modal-default .parag {
+    margin-top: -23px;
+  }
+  #modal-default .selected-pledge {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  #modal-default .selected-pledge p {
+    padding-top: 0;
+  }
+  #modal-default .dollar {
+    left: 50%;
+    right: 50%;
+    top: 35px;
+    bottom: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

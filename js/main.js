@@ -26,27 +26,68 @@ const overlay = document.getElementById("overlay");
 
 function backThisProject() {
     modalDefault.style.visibility = "visible";
-    overlay.style.opacity = "10%";
-    modalDefault.style.transition = "visibility 500ms ease-in";
-        overlay.style.transition = "opacity 350ms ease-in";
+    overlay.style.display = "block";
     
 }
 
 function closeModal() {
     modalDefault.style.visibility = "hidden";
-    overlay.style.opacity = "100%";
+    overlay.style.display = "none";
     modalDefault.style.transition = "visibility 100ms ease-in";
-    overlay.style.transition = "opacity 300ms ease-in";
+    overlay.style.transition = "display 300ms ease-in";
 }
 
-let changeBorderColor = document.querySelector(".bamboo");
-let selectedPledge = document.querySelector(".selectedPledge");
-let radioSelect = document.querySelector('input[name="pledge"]:checked');
-let radioClick = document.getElementById("pledge");
 
+const modalSuccess = document.getElementById("modal-success");
+const textValue = document.getElementById("text");
+let masterCraft = document.getElementById("mastercraft");
 
-function clickBorder() {
-    if (radioSelect) {
-        radioClick.parentNode.style.color = "red";
+function showSuccess() {
+    
+    if (textValue.value > 200) {
+        alert("Thank you for the pledge. Please note that the maximum is $200")
+    } else if (textValue.value === "" || textValue.value < 25) {
+        alert(" Please, enter a number between 25 and 200")
+    } else {
+        modalDefault.style.visibility = "hidden";
+        modalDefault.style.transition = " ease-in-out";
+        modalSuccess.style.visibility = "visible";
+        modalSuccess.style.transition = " 100ms ease-in";
+        overlay.style.display = "block";
+        masterCraft.style.opacity = "0.1"
+
     }
+   
+}
+
+function gotIt() {
+    modalSuccess.style.visibility = "hidden";
+    overlay.style.display = "none";
+    masterCraft.style.opacity = "1"
+}
+
+
+const hamburger = document.getElementById("ham");
+const menuClose = document.getElementById("menu-close");
+const mobileMenu = document.querySelector(".menu");
+const main = document.querySelector("main");
+
+
+function openMenu() {
+    overlay.style.zIndex = "-1";
+    mobileMenu.style.display = "block";
+    hamburger.style.display = "none";
+    menuClose.style.display = "block";
+    overlay.style.display = "block";
+    main.style.opacity = "0.1";
+   
+}
+
+function closeMenu() {
+    mobileMenu.style.display = "none";
+    hamburger.style.display = "inline-block";
+    menuClose.style.display = "none";
+    overlay.style.display = "none";
+    main.style.opacity = "1";
+    overlay.style.zIndex = "3";
 }
