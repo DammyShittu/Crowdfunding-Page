@@ -227,7 +227,7 @@ header {
 
                     .button-1 {
                               position: relative;
-                              max-width: 120px;
+                              width: 120px;
                     }
                     .btn-1 {
                               @extend %btn-1;
@@ -254,7 +254,7 @@ header {
 
 #numbers-section {
           @extend %main;
-          margin-top: 13%;
+          margin-top: 12.2%;
           margin-bottom: 17px;
 
           .numbers {
@@ -703,7 +703,7 @@ header {
           }
 
           #numbers-section {
-                    margin-top: 65%;
+                    margin-top: 48%;
 
                     .numbers {
                               width: 100%;
@@ -728,7 +728,8 @@ header {
           }
 
           #modal-default {
-                    top: 160%;
+                    top: 130%;
+                 
 
                     h4 {
                         position: relative;
@@ -771,17 +772,118 @@ header {
                           p {
                               padding-top: 0;
                           }
+                          
+
+                          .dollar {
+                            top: 83%;
+                            bottom: 0;
+                           left: 19%;
+                               }
 
                        }
                        
-                       .dollar {
-                        left: 50%;
-                        right: 50%;
-                        top: 35px;
-                        bottom: 0;
-                      }
+              
           } 
+     
+}
 
+@media only screen and (max-width: 375px) {
+    #mastercraft .mastercraft-btn  {
+        width: 100%;
+
+        .btn  {
+            width: 190px;
+        }
+
+        .button-1 {
+            width: 80px;
+        }
+
+        .btn-1 {
+           display: none;
+        }
+
+        img {
+       
+            left: 10px;
+            top: -23px;
+            width: 85%;
+            outline: none;
+        }
+
+    }
+
+    #numbers-section {
+        margin-top: 68%;
+    }
+
+    #modal-default {
+        top: 150%;
+
+        label {
+            padding-right: 0;
+            width: 100%;
+            font-size: 14px;
+           }
+           #label-1 {
+             padding-right: 30px;
+           }
+
+           .font-1 {
+            top: 200px;
+        }
+
+        h4 {
+            top: 180px;
+        }
+.selected-pledge .dollar {
+    left: 11%;
+}
+
+    }
+
+    #modal-success {
+        width: 90%;
+        padding: 15px;
+}
+
+}
+
+@media only screen and (max-width: 320px) {
+    #mastercraft   {
+
+        .mastercraft-img {
+            top: -9%;
+        }
+      
+        .mastercraft-btn .btn  {
+            width: 145px;
+        }
+       
+    }   
+
+    #numbers-section {
+        margin-top: 100%;
+    }
+
+    #modal-default 
+    {
+        top: 200%;
+    label {
+        margin-left: 5px;
+        font-size: 12px;
+       }
+
+       #more, #more-1 {
+           font-size: 12px;
           
-        
+       }
+       #more {
+        margin-left: 30px;
+       }
+
+       #more-1 {
+        margin-left: 0;
+       }
+    }
 }
