@@ -91,3 +91,17 @@ function closeMenu() {
     main.style.opacity = "1";
     overlay.style.zIndex = "3";
 }
+
+// const pledge = document.querySelector("input[name=pledgeName]:checked");
+// const selectedPledge = document.querySelector(".selected-pledge")
+
+
+// function clickPledge() {
+//     if (pledge) {
+//         selectedPledge.style.display = "flex";
+//         selectedPledge.style.opacity = "1";
+//         selectedPledge.style.maxHeight = "100px";
+//         selectedPledge.style.paddingBottom = "10px";
+//         selectedPledge.style.transform = "scale(1)";        
+//   }
+// }

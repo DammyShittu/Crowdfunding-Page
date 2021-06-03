@@ -1,18 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
-:root {
-  --primary-color: hsl(176, 50%, 47%);
-  --secondary-color: hsl(176, 72%, 28%);
-  --black: hsl(0, 0%, 0%);
-  --white: #fff;
-  --tertiary-color: hsl(0, 0%, 48%);
-  --page-font: "Commissioner", sans-serif;
-}
-
 #mastercraft, #numbers-section, #about-section, #modal-default, #modal-success {
   width: 50%;
   height: max-content;
   margin: 0 auto;
-  background: var(--white);
+  background: #fff;
   border: none;
   border-radius: 10px;
   padding: 45px;
@@ -21,8 +12,8 @@
 .btn {
   width: max-content;
   padding: 13px 20px;
-  background: var(--primary-color);
-  color: var(--white);
+  background: #3cb4ac;
+  color: #fff;
   border: none;
   border-radius: 50px;
   outline: none;
@@ -32,7 +23,7 @@
 #mastercraft .mastercraft-btn .btn-1, #about-section .mahogany .btn, #modal-default .mahogany .btn {
   width: auto;
   background: #ede9e9;
-  color: var(--tertiary-color);
+  color: #7a7a7a;
   border: none;
   border-radius: 50px;
   outline: none;
@@ -47,7 +38,7 @@
 
 body {
   width: 100%;
-  font-family: var(--page-font);
+  font-family: "Commissioner", sans-serif;
   font-size: 16px;
   line-height: 2;
   background: #f0f0f0;
@@ -60,7 +51,7 @@ nav {
 }
 
 p {
-  color: var(--tertiary-color);
+  color: #7a7a7a;
   opacity: 0.9;
   font-weight: normal;
 }
@@ -74,7 +65,7 @@ h3 {
 }
 
 .btn:hover {
-  background: var(--secondary-color);
+  background: #147b74;
   transition: all 400ms ease-in-out;
 }
 
@@ -134,7 +125,7 @@ header li {
 
 header li a {
   text-decoration: none;
-  color: var(--white);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -171,7 +162,7 @@ header #mobile-menu {
 
 #mastercraft .intro h1 {
   font-size: 25px;
-  color: var(--black);
+  color: black;
   line-height: 1.6;
 }
 
@@ -239,7 +230,7 @@ header #mobile-menu {
   width: 89%;
   height: 9px;
   border-radius: 50px;
-  background-color: var(--primary-color);
+  background-color: #3cb4ac;
 }
 
 #numbers-section input[type="range"] {
@@ -260,7 +251,7 @@ header #mobile-menu {
 
 #numbers-section input[type="range"]::-moz-range-track {
   height: 10px;
-  background: var(--primary-color);
+  background: #3cb4ac;
   border: none;
   border-radius: 50px;
 }
@@ -287,7 +278,7 @@ header #mobile-menu {
 }
 
 #about-section span {
-  color: var(--primary-color);
+  color: #3cb4ac;
   font-size: 13px;
 }
 
@@ -307,7 +298,7 @@ header #mobile-menu {
 }
 
 #about-section .bamboo-pledge .num-left .left {
-  color: var(--tertiary-color);
+  color: #7a7a7a;
   opacity: 0.9;
 }
 
@@ -357,7 +348,7 @@ header #mobile-menu {
 }
 
 #modal-default input[type="radio"]:checked {
-  background-color: var(--primary-color);
+  background-color: #3cb4ac;
 }
 
 #modal-default label {
@@ -367,18 +358,18 @@ header #mobile-menu {
 }
 
 #modal-default label:hover {
-  color: var(--primary-color);
+  color: #3cb4ac;
   font-weight: bold;
   transition: color 300ms ease-in;
 }
 
 #modal-default span {
-  color: var(--primary-color);
+  color: #3cb4ac;
   font-size: 14px;
 }
 
 #modal-default .left {
-  color: var(--tertiary-color);
+  color: #7a7a7a;
   opacity: 0.9;
 }
 
@@ -398,9 +389,7 @@ header #mobile-menu {
   opacity: 0.5;
 }
 
-#modal-default .selected-pledge,
-#modal-default .selected-pledge-1,
-#modal-default .selected-pledge-2 {
+#modal-default .selected-pledge {
   opacity: 0;
   justify-content: space-between;
   align-items: center;
@@ -413,37 +402,8 @@ header #mobile-menu {
   transition: 0.5s;
 }
 
-#modal-default .selected-pledge p,
-#modal-default .selected-pledge-1 p,
-#modal-default .selected-pledge-2 p {
+#modal-default .selected-pledge p {
   padding-top: 10px;
-}
-
-#modal-default #pledge:checked ~ .selected-pledge {
-  display: flex;
-  opacity: 1;
-  max-height: 100px;
-  overflow: visible;
-  padding-bottom: 10px;
-  transform: scale(1);
-}
-
-#modal-default #pledge-1:checked ~ .selected-pledge-1 {
-  display: flex;
-  opacity: 1;
-  max-height: 100px;
-  overflow: visible;
-  padding-bottom: 10px;
-  transform: scale(1);
-}
-
-#modal-default #pledge-2:checked ~ .selected-pledge-2 {
-  display: flex;
-  opacity: 1;
-  max-height: 100px;
-  overflow: visible;
-  padding-bottom: 10px;
-  transform: scale(1);
 }
 
 #modal-default input[type="number"] {
@@ -452,8 +412,8 @@ header #mobile-menu {
   max-width: 90px;
   padding: 10px;
   outline: none;
-  caret-color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  caret-color: #3cb4ac;
+  border: 2px solid #3cb4ac;
   margin: 0 5px;
   font-size: 15px;
   text-align: center;
@@ -466,7 +426,7 @@ header #mobile-menu {
   top: 35px;
   bottom: 0;
   z-index: 999;
-  color: var(--tertiary-color);
+  color: #7a7a7a;
   font-size: 17px;
 }
 
@@ -513,7 +473,7 @@ header #mobile-menu {
     gap: 20px;
   }
   #modal-default {
-    top: 55%;
+    top: 105%;
   }
   #modal-default .dollar {
     left: 54%;
@@ -529,10 +489,10 @@ header #mobile-menu {
     top: -11%;
   }
   #numbers-section {
-    margin-top: 25%;
+    margin-top: 23%;
   }
   #modal-default {
-    top: 80%;
+    top: 150%;
   }
   #modal-default .dollar {
     left: 57%;
@@ -546,9 +506,11 @@ header #mobile-menu {
   #about-section,
   #modal-default {
     width: 90%;
+    padding: 20px;
   }
   #modal-success {
     width: 80%;
+    padding: 20px;
   }
   header {
     height: 300px;
@@ -584,7 +546,7 @@ header #mobile-menu {
     display: none;
     width: 85%;
     height: max-content;
-    background-color: var(--white);
+    background-color: #fff;
     border-radius: 10px;
     position: absolute;
     top: 55%;
@@ -595,7 +557,7 @@ header #mobile-menu {
   header #mobile-menu .menu a {
     display: block;
     text-decoration: none;
-    color: var(--black);
+    color: black;
     padding: 15px 20px;
     font-size: 18px;
     font-weight: bold;
@@ -608,6 +570,21 @@ header #mobile-menu {
   }
   #mastercraft {
     top: 230px;
+  }
+  #mastercraft .mastercraft-btn {
+    width: 100%;
+  }
+  #mastercraft .mastercraft-btn .btn {
+    width: 260px;
+  }
+  #mastercraft .mastercraft-btn .btn-1 {
+    display: none;
+  }
+  #mastercraft .mastercraft-btn img {
+    left: 20px;
+    top: -23px;
+    width: 60%;
+    outline: none;
   }
   #numbers-section {
     margin-top: 48%;
@@ -630,7 +607,7 @@ header #mobile-menu {
     align-items: flex-start;
   }
   #modal-default {
-    top: 130%;
+    top: 160%;
   }
   #modal-default h4 {
     position: relative;
@@ -675,26 +652,14 @@ header #mobile-menu {
 }
 
 @media only screen and (max-width: 375px) {
-  #mastercraft .mastercraft-btn {
-    width: 100%;
-  }
   #mastercraft .mastercraft-btn .btn {
-    width: 190px;
-  }
-  #mastercraft .mastercraft-btn .button-1 {
-    width: 80px;
-  }
-  #mastercraft .mastercraft-btn .btn-1 {
-    display: none;
+    width: 220px;
   }
   #mastercraft .mastercraft-btn img {
-    left: 10px;
-    top: -23px;
-    width: 85%;
-    outline: none;
+    width: 58%;
   }
   #numbers-section {
-    margin-top: 68%;
+    margin-top: 55%;
   }
   #modal-default {
     top: 150%;
@@ -708,10 +673,10 @@ header #mobile-menu {
     padding-right: 30px;
   }
   #modal-default .font-1 {
-    top: 200px;
+    top: 160px;
   }
   #modal-default h4 {
-    top: 180px;
+    top: 150px;
   }
   #modal-default .selected-pledge .dollar {
     left: 11%;
@@ -723,23 +688,25 @@ header #mobile-menu {
 }
 
 @media only screen and (max-width: 320px) {
-  #mastercraft .mastercraft-img {
-    top: -9%;
-  }
   #mastercraft .mastercraft-btn .btn {
-    width: 145px;
+    width: 185px;
+  }
+  #mastercraft .mastercraft-btn img {
+    left: 5px;
+    width: 80%;
   }
   #numbers-section {
-    margin-top: 100%;
+    margin-top: 64%;
   }
   #modal-default {
-    top: 200%;
+    top: 180%;
   }
   #modal-default label {
     margin-left: 5px;
     font-size: 12px;
   }
-  #modal-default #more, #modal-default #more-1 {
+  #modal-default #more,
+  #modal-default #more-1 {
     font-size: 12px;
   }
   #modal-default #more {
@@ -747,6 +714,12 @@ header #mobile-menu {
   }
   #modal-default #more-1 {
     margin-left: 0;
+  }
+  #modal-default .font-1 {
+    top: 210px;
+  }
+  #modal-default h4 {
+    top: 190px;
   }
 }
 /*# sourceMappingURL=style.css.map */
